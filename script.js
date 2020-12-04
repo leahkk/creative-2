@@ -12,7 +12,7 @@ document.getElementById("breedButton").addEventListener("click", function(event)
       result += "<h2>Choose the dog you want to take home</h2>";
       result += "<div id='masonry'>";
       for (let i = 0; i < json.message.length; i++) {
-        result += "<img class='image' onclick='imageFunction(this)' src='" + json.message[i] + "'>";
+        result += "<img class='image' loading='lazy' onclick='imageFunction(this)' src='" + json.message[i] + "'>";
       }
       result += "</div>";
       document.getElementById("image-cont").innerHTML = result;
@@ -23,7 +23,7 @@ document.getElementById("breedButton").addEventListener("click", function(event)
 });
 
 function imageFunction(image) {
-  let result = "<img id='winner' src='" + image.src + "'>";
-  result += "<h2>Congrats on Your New Dog!</h2>";
+  let result = "<h2>Congrats on Your New Dog!</h2>";
+  result += "<img id='winner' src='" + image.src + "'>";
   document.getElementById("image-cont").innerHTML = result;
 }
